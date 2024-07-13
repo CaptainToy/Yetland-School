@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+  <link rel="stylesheet" href="./assets/css/admission.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-1ZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9s+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="title">Parent Registration Form
+    </div>
+    <form action="POST" data-netlify="true">
+      <div class="form">
+
+        <div class="inputfield">
+          <label>Father's Name</label>
+          <input type="text" class="input" id="name" name="fname" placeholder="Enter first name" maxlength="30"
+            pattern="[A-Za-z]{1,32}" title="Enter only alphabets" required>
+        </div>
+
+        <div class="inputfield">
+          <label>Mother's Name</label>
+          <input type="text" class="input" id="name" name="lname" placeholder="Enter last name" maxlength="30"
+            pattern="[A-Za-z]{1,32}" title="Enter only alphabets" required>
+        </div>
+          <div class="inputfield">
+          <label for="">Father's Phone Number</label>
+          <div class="custom-select" id="phone-codes">
+            <select id="phone-code">
+              <option value="+234">+234</option>
+            </select>
+          </div>
+          <input type="tel" class="input" name="phone-number" maxlength="10" id="phone-number"
+            placeholder="Enter your phone number" pattern="[7-9]{1}[0-9]{9}" title="Please enter valid phone number">
+        </div> 
+
+           <div class="inputfield">
+          <label for="">Mother's Phone Number</label>
+          <div class="custom-select" id="phone-codes">
+            <select id="phone-code">
+              <option value="+234">+234</option>
+            </select>
+          </div>
+          <input type="tel" class="input" name="phone-number" maxlength="10" id="phone-number"
+            placeholder="Enter your phone number" pattern="[7-9]{1}[0-9]{9}" title="Please enter valid phone number">
+        </div> 
+
+
+        <div class="inputfield">
+          <label>Email Address</label>
+          <input type="email" class="input" name="email" placeholder="Enter your email (optional)"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required>
+        </div>
+
+     
+
+        <div class="inputfield">
+          <label>Nationality</label>
+          <input type="text" onkeyup='check()' class="input" id="confirm-password" name=""
+            placeholder="Nationality" autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            maxlength="100" minlength="8" required>
+        </div>
+
+        <div class="inputfield" id="gender">
+            <label for="">Religion</label>
+            <input type="radio" name="gender" id="radio" value="Male">Christain
+            <input type="radio" name="gender" id="radio" value="Female">Muslim
+          </div>
+  
+
+        
+
+        <p id="message"></p>
+
+    
+
+        <div class="inputfield">
+          <label>Address 1</label>
+          <textarea class="textarea" name="address" id="" cols="30" rows="5" placeholder="Enter your address"
+            pattern="^[a-zA-Z][a-zA-Z0-9-_.]{5,12}$" maxlength="100" required></textarea>
+        </div>
+
+        
+        <div class="inputfield">
+            <label>Address 2</label>
+            <textarea class="textarea" name="address" id="" cols="30" rows="5" placeholder="Enter your address"
+              pattern="^[a-zA-Z][a-zA-Z0-9-_.]{5,12}$" maxlength="100" required></textarea>
+          </div>
+
+        <div class="inputfield">
+          <label>State</label>
+          <div class="custom_select">
+            <select id="state" name="state" required>
+              <option value="">--Select your state--</option>
+              <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+             
+            </select>
+          </div>
+        </div>
+
+
+  
+
+        <div class="inputfield btns" id="btn">
+          <button type="submit" value="Register" class="btn" onclick="checkPassword()"><a href="./madicalForm.html">Next</a></button>
+          <!-- <button type="reset" value="Reset" class="btn">Reset</button> -->
+        </div>
+
+      </div>
+    </form>
+  </div>
+<script src="./assets/js/admission.js"></script>
+</body>
+
+</html>

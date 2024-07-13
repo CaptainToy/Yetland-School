@@ -1,0 +1,136 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    padding: 0 20px; /* Added padding to prevent overflow */
+    box-sizing: border-box;
+}
+
+.container img {
+    width: 200px;
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.content-container form {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.email-container {
+    padding: 10px 15px;
+    width: 70%; /* Make container full width */
+    box-sizing: border-box;
+}
+
+.email-container input {
+    width: 500px; /* Make input full width */
+    max-width: 700px; /* Set a max-width */
+    border: none;
+    border-radius: 50px;
+    color: black;
+    background: rgb(235, 227, 120);
+    outline: none;
+    padding: 20px 25px; /* Ensure padding for better appearance */
+    /* box-sizing: border-box; */
+}
+
+.email-container input::placeholder {
+    color: white;
+    font-size: 20px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    padding: 10px 70px;
+    border-radius: 20px;
+    background-color: gray;
+    color: white;
+    border: none;
+    box-shadow: 1px black;
+    margin-bottom: 20px;
+}
+
+.btn:hover,
+.btn-sm:hover {
+    background: rgb(208, 205, 205);
+    color: black;
+    transition: 0.5s ease-in-out;
+}
+
+.btn-sm {
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+    background: gray;
+    color: white;
+}
+
+.Error_message {
+    color: red;
+    text-align: center; /* Center text */
+   
+}
+
+.success {
+    color: green;
+    width: 100%;
+}
+
+.from-control a {
+    text-decoration: none;
+    color: black;
+    font-weight: lighter;
+    padding: 20px;
+}
+
+ul li a {
+    text-decoration: none;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .btn {
+        padding: 10px 60px;
+    }
+    .email-container input {
+        width: 300px;
+    }
+    .Error_message, .success {
+        padding: 10px;
+        border-radius: 10px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .btn {
+        padding: 10px 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        padding: 10px 40px;
+    }
+}
+
+@media (max-width: 320px) {
+    .btn {
+        padding: 10px 30px;
+    }
+}
