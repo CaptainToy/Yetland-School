@@ -11,17 +11,21 @@ body {
     justify-content: center;
     align-items: center;
     height: 90vh;
-    padding: 0 20px; /* Added padding to prevent overflow */
+    padding: 0 10px; /* Added padding to prevent overflow */
     box-sizing: border-box;
 }
 
 .container img {
-    width: 200px;
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* padding: 20px; */
     border-radius: 50%;
 }
 
 .content-container form {
+    max-width: 100%;
     padding: 20px;
     box-sizing: border-box;
 }

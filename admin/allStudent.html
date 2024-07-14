@@ -10,7 +10,7 @@
         <!-- ===== CSS ===== -->
          <link rel="stylesheet" href="./css/main.css">
 
-        <title>Sidebar menu responsive</title>
+        <title>All Student</title>
     </head>
     <body id="body-pd">
         <header class="header" id="header">
@@ -32,10 +32,7 @@
                     </a>
 
                     <div class="nav__list">
-                        <a href="./All-Teacher-Student.html" class="nav__link">
-                        <i class='bx bx-grid-alt nav__icon' ></i>
-                            <span class="nav__name">Dashboard</span>
-                        </a>
+                     
 
                         <a href="./Teacher.html" class="nav__link">
                             <i class='bx bx-user nav__icon' ></i>
@@ -71,7 +68,36 @@
             </nav>
         </div>
 
-        <h1>Components</h1>
+        <h2>All Student</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Number</th>
+                    <th>Result</th>
+                    <th>class</th>
+                    <th>Delete</th>
+                    
+                    <!-- <th>Admin</th> -->
+    
+                </tr>
+            </thead>
+            <tbody>
+                 <tr>
+                    <td>Koede abdulsalam</td>
+                    <td>YMS-100-001</td>
+                    <td><a href="./student-Result.html" class="btn sm"><i class='bx bx-printer nav__icon' ></i></a></td>
+                    <td>Basic 1</td>
+                    <td><a href="./deleteStudent.html" class="btn danger"><i class='bx bx-trash nav__icon' ></i></a></td>
+                   
+                    <!-- <td>Yes</td> -->
+    
+                 </tr>
+                
+                
+                 
+            </tbody>
+        </table>
         <!--===== MAIN JS =====-->
         <script src="./js/main.js"></script>
     </body>

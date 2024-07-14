@@ -10,35 +10,6 @@
   --first-color: #4723D9;
   --first-color-light: #AFA5D9;
   --white-color: #F7F6FB;
-  :root {
-    --color-primary: #6f6af8;
-    --color-primary-variant: #5854c7;
-    --color-primary-light: hsl(242, 91%, 69%, 18%);
-    --color-danger: red;
-    --color-danger-light: hsl(346, 87%,46%, 15%);
-    --color-success-light:hsl(156, 100%, 38%, 15%);
-    --color-success: green;
-    --color-gray-1: #1e1e66;
-    --color-gray-2:#2d2b7c;
-    --color-black:#222222;
-    --color-white:white;
-    --color-light: #ccc;
-    --color-light-variant: #626262;
-    --color-bg: #efefef;
-    --header-height: 3rem;
-    --nav-width: 68px;
-    --first-color: #4723D9;
-    --first-color-light: #AFA5D9;
-    --white-color: #F7F6FB;
-    --body-font: 'Nunito', sans-serif;
-    --normal-font-size: 1rem;
-    --z-fixed: 100;
-    --border-radius-1: .3rem;
-    --border-radius-2: .5rem;
-    --border-radius-3: .8rem;
-    --border-radius-4: 2rem;
-    --border-radius-5: 5rem;
-  }
   
   /*===== Font and typography =====*/
   --body-font: 'Nunito', sans-serif;
@@ -208,32 +179,6 @@ td .sm{
   color: red;
   
 }
-/* Button styles */
-.btn {
-  display: inline-block;
-  width: fit-content;
-  padding: 0.6rem 1.2rem;
-  background-color: var(--color-primary);
-  border-radius: var(--border-radius-2);
-  cursor: pointer;
-  transition: 0.5 ease;
-  color: var(--color-white);
-}
-
-.btn-edit {
-  color: var(--color-bg);
-  background: var(--color-gray-1);
-  padding: 10px 30px;
-  border-radius: 20px;
-}
-
-.btn-delete {
-  color: var(--color-bg);
-  background: var(--color-danger);
-  padding: 10px 20px;
-  border-radius: 20px;
-}
-
 
 
 /* ===== MEDIA QUERIES=====*/

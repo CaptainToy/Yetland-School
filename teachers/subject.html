@@ -8,9 +8,9 @@
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
         <!-- ===== CSS ===== -->
-         <link rel="stylesheet" href="./css/main.css">
+         <link rel="stylesheet" href="../admin/css/main.css">
 
-        <title>All Student Result</title>
+        <title>Sidebar menu responsive</title>
     </head>
     <body id="body-pd">
         <header class="header" id="header">
@@ -32,32 +32,26 @@
                     </a>
 
                     <div class="nav__list">
-                    
 
-                        <a href="./Teacher.html" class="nav__link">
+                       
+                        <a href="./Class.html" class="nav__link ">
                             <i class='bx bx-user nav__icon' ></i>
-                            <span class="nav__name">Teachers</span>
-                        </a>
-                        
-                        <a href="./allStudent.html" class="nav__link">
-                            <i class='bx bx-message-square-detail nav__icon' ></i>
                             <span class="nav__name">Student</span>
                         </a>
+                        
+                        <a href="./subject.html" class="nav__link active">
+                            <i class='bx bx-book nav__icon' ></i>
+                            <span class="nav__name">Subject</span>
+                        </a>
 
-                        <a href="./All-Result.html" class="nav__link active">
-                            <i class='bx bx-bookmark nav__icon' ></i>
+                       
+
+                        <a href="./result.html" class="nav__link">
+                            <i class='bx bx-folder nav__icon' ></i>
                             <span class="nav__name">Result</span>
                         </a>
 
-                        <a href="./Add-post.html" class="nav__link">
-                            <i class='bx bx-folder nav__icon' ></i>
-                            <span class="nav__name">Post</span>
-                        </a>
-
-                        <a href="./School-fee.html" class="nav__link">
-                            <i class='bx bx-bar-chart-alt-2 nav__icon' ></i>
-                            <span class="nav__name">School Fee</span>
-                        </a>
+                      
                     </div>
                 </div>
 
@@ -68,27 +62,25 @@
             </nav>
         </div>
 
-        <h2>All Student Result</h2>
+        <h2>Subject</h2>
+        <button class="btn"><a href="./AddSubject.html">+Subject</a></button>
         <table>
             <thead>
                 <tr>
-                    <th>School Number</th>
-                    <th>Full Name</th>
-                    <th>Result</th>
-                    <th>Class</th>
-                    
-                    <!-- <th>Admin</th> -->
+                    <th>ID</th>
+                    <th>Subject</th>
+                    <th>Delete</th>
+
     
                 </tr>
             </thead>
             <tbody>
                  <tr>
-                    <td>YMS-100-001</td>
-                    <td>Koede abdulsalam</td>
-                    <td><a href="./student-Result.html" class="btn sm"><i class='bx bx-printer nav__icon' ></i></a></td>
-                    <td>Basic 1</td>
+                    <td>1</td>
+                    <td>English language</td>
+                    <td><a href="./DeleteSubject.html" class="btn danger"><i class='bx bx-trash nav__icon' ></i></a></td>
                    
-                    <!-- <td>Yes</td> -->
+                    
     
                  </tr>
                 
@@ -97,6 +89,6 @@
             </tbody>
         </table>
         <!--===== MAIN JS =====-->
-        <script src="./js/main.js"></script>
+        <script src="../admin/js/main.js"></script>
     </body>
 </html>
