@@ -8,9 +8,9 @@
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
         <!-- ===== CSS ===== -->
-         <link rel="stylesheet" href="./css/main.css">
+         <link rel="stylesheet" href="../admin/css/main.css">
 
-        <title>Teachers Document</title>
+        <title>Sidebar menu responsive</title>
     </head>
     <body id="body-pd">
         <header class="header" id="header">
@@ -32,9 +32,9 @@
                     </a>
 
                     <div class="nav__list">
-                        
 
-                        <a href="./Teacher.html" class="nav__link active">
+                       
+                        <a href="./Teacher.html" class="nav__link ">
                             <i class='bx bx-user nav__icon' ></i>
                             <span class="nav__name">Teachers</span>
                         </a>
@@ -44,7 +44,7 @@
                             <span class="nav__name">Student</span>
                         </a>
 
-                        <a href="./result.html" class="nav__link">
+                        <a href="./result.html" class="nav__link active" >
                             <i class='bx bx-bookmark nav__icon' ></i>
                             <span class="nav__name">Result</span>
                         </a>
@@ -58,6 +58,7 @@
                             <i class='bx bx-bar-chart-alt-2 nav__icon' ></i>
                             <span class="nav__name">School Fee</span>
                         </a>
+                      
                     </div>
                 </div>
 
@@ -68,23 +69,31 @@
             </nav>
         </div>
 
-        <h2>Staffs Document</h2>
+        <h2>Add Result</h2>
+        <button class="btn"><a href="./addresult.html">Add Result</a></button>
+        <h4>session: 2023/2024</h4>
+        <h4>Term: 1st</h4>
         <table>
             <thead>
                 <tr>
-                    <th>Full Name</th>
-                    <th>Email</th>
+                    <th>ID</th>
+                    <th>Name</th>
                     <th>Class</th>
                     <th>Edit</th>
+                    <th>View</th>
+                    <th>Delete</th>
+
     
                 </tr>
             </thead>
             <tbody>
                  <tr>
-                    <td>Koede abdulsalam</td>
-                    <td>abdulsalamolukorede@gmail.com</td>
-                    <td>Basic 5</td>
-                    <td><a href="./editTeachers.html" class="btn sm"><i class='bx bx-file nav__icon' ></i></a></td>
+                    <td>YMS-100-001</td>
+                    <td>Abdulsalam korede</td>
+                    <td>Basic 1</td>
+                    <td><a href="./editResult.html" class="btn sm"><i class='bx bx-pen nav__icon' ></i></a></td>
+                    <td><a href="./resultview.html" class="btn sm"><i class='bx bx-low-vision nav__icon' ></i></a></td>
+                    <td><a href="./DeleteSubject.html" class="btn danger"><i class='bx bx-trash nav__icon' ></i></a></td>
                    
                     
     
@@ -95,6 +104,6 @@
             </tbody>
         </table>
         <!--===== MAIN JS =====-->
-        <script src="./js/main.js"></script>
+        <script src="../admin/js/main.js"></script>
     </body>
 </html>

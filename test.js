@@ -14,14 +14,14 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         window.location.href = './admin/Admin.html';
     } else if (email === 'help123' && pass === '123456') {
         error.textContent = "Welcome HM";
-        error.style.color = "yellow";
+        error.style.color = "red";
         alert(error.textContent); // Added alert after setting the text content
         window.location.href = './HM/Admin.html';
-    } else {
+    } else if (email === '123456' && pass === '123456') {
         error.textContent = "Welcome Staff";
         error.style.color = "red";
         alert(error.textContent); // Added alert after setting the text content
-        window.location.href = './index.html';
+        window.location.href = './teachers/admin.html';
     }
 });
 
@@ -30,7 +30,7 @@ function handleAgreement(event) {
     var checkbox = document.querySelector('input[type="checkbox"]');
     if (checkbox.checked) {
         if (confirm("Are you sure you want to proceed?")) {
-            window.location.href = './teacher.html';
+            window.location.href = './student.html';
         }
     } else {
         alert("You must agree to the terms and conditions before continuing.");

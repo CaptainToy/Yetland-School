@@ -8,9 +8,9 @@
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
         <!-- ===== CSS ===== -->
-         <link rel="stylesheet" href="./css/main.css">
+         <link rel="stylesheet" href="../admin/css/main.css">
 
-        <title>All Student Result</title>
+        <title>Result</title>
     </head>
     <body id="body-pd">
         <header class="header" id="header">
@@ -32,18 +32,19 @@
                     </a>
 
                     <div class="nav__list">
+
                        
-                        <a href="./Teacher.html" class="nav__link">
+                        <a href="./Teacher.html" class="nav__link ">
                             <i class='bx bx-user nav__icon' ></i>
                             <span class="nav__name">Teachers</span>
                         </a>
                         
-                        <a href="./sendmail.html" class="nav__link">
+                        <a href="./student.html" class="nav__link active">
                             <i class='bx bx-message-square-detail nav__icon' ></i>
                             <span class="nav__name">Student</span>
                         </a>
 
-                        <a href="./All-Result.html" class="nav__link active">
+                        <a href="./result.html" class="nav__link">
                             <i class='bx bx-bookmark nav__icon' ></i>
                             <span class="nav__name">Result</span>
                         </a>
@@ -57,6 +58,7 @@
                             <i class='bx bx-bar-chart-alt-2 nav__icon' ></i>
                             <span class="nav__name">School Fee</span>
                         </a>
+                      
                     </div>
                 </div>
 
@@ -67,27 +69,27 @@
             </nav>
         </div>
 
-        <h2>All Student Result</h2>
+        <h2>Student</h2>
+        <button class="btn"><a href="./addStudent.html">+ Student</a></button>
         <table>
             <thead>
                 <tr>
-                    <th>School Number</th>
-                    <th>Full Name</th>
-                    <th>Result</th>
-                    <th>Class</th>
-                    
-                    <!-- <th>Admin</th> -->
+                    <th>Studentf ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Edit</th>
+
     
                 </tr>
             </thead>
             <tbody>
                  <tr>
-                    <td>YMS-100-001</td>
-                    <td>Koede abdulsalam</td>
-                    <td><a href="./student-Result.html" class="btn sm"><i class='bx bx-printer nav__icon' ></i></a></td>
-                    <td>Basic 1</td>
+                    <td>YMS-2023001</td>
+                    <td>Koede</td>
+                    <td>Abdulsalam</td>
+                    <td><a href="./editStudent.html" class="btn sm"><i class='bx bx-file nav__icon' ></i></a></td>
                    
-                    <!-- <td>Yes</td> -->
+                    
     
                  </tr>
                 
@@ -95,7 +97,8 @@
                  
             </tbody>
         </table>
+        <!-- <h4><button>Upload</button></h4> -->
         <!--===== MAIN JS =====-->
-        <script src="./js/main.js"></script>
+        <script src="../admin/js/main.js"></script>
     </body>
 </html>
