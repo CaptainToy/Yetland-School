@@ -8,7 +8,7 @@
 
 
 :root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --background-color: rgb(221, 217, 217); /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #222523; /* Color for headings, subheadings and title throughout the website */
   --accent-color: green ; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
@@ -74,6 +74,16 @@ h5,
 h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
+}
+.contnt-img{
+  /* height: 10px; */
+  max-height: 100%;
+}
+
+.contnt-img img{
+  display: flex;
+  height: 100px;
+  font-size: 40px;
 }
 
 /* PHP Email Form Messages
