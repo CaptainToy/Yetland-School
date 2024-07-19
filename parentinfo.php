@@ -30,78 +30,55 @@ unset($_SESSION['signup-data']);
 <body>
   <div class="wrapper">
     <div class="title">Parent Registration Form</div>
-    <form action="<?= ROOT_URL ?>parentFormLogic.php" method="POST">
+    <form action="parentFormLogic.php" method="POST">
       <div class="form">
 
         <div class="inputfield">
           <label>Father's Name</label>
-          <input type="text" class="input" id="name" name="fname" placeholder="Enter first name" value="<?= htmlspecialchars($Father) ?>" maxlength="30"
+          <input type="text" class="input" id="name" name="Father" placeholder="Enter father's name" value="<?= htmlspecialchars($Father) ?>" maxlength="30"
             title="Enter only alphabets" required>
         </div>
 
         <div class="inputfield">
           <label>Mother's Name</label>
-          <input type="text" class="input" id="name" name="lname" placeholder="Enter last name" maxlength="30"
+          <input type="text" class="input" id="name" name="Mother" placeholder="Enter mother's name" maxlength="30"
             value="<?= htmlspecialchars($Mother) ?>" title="Enter only alphabets" required>
         </div>
         
         <div class="inputfield">
           <label for="">Father's Phone Number</label>
-          <div class="custom-select" id="phone-codes">
-            <select id="phone-code" name="father-phone-code">
-              <option value="+234">+234</option>
-            </select>
-          </div>
-          <input type="tel" class="input" name="father-phone-number" maxlength="10" id="phone-number"
-            placeholder="Enter your phone number" value="<?= htmlspecialchars($FatherNumber) ?>" title="Please enter valid phone number">
+          <input type="tel" class="input" name="FatherNumber" maxlength="10" id="phone-number"
+            placeholder="Enter father's phone number" value="<?= htmlspecialchars($FatherNumber) ?>" title="Please enter valid phone number" required>
         </div> 
 
         <div class="inputfield">
           <label for="">Mother's Phone Number</label>
-          <div class="custom-select" id="phone-codes">
-            <select id="phone-code" name="mother-phone-code">
-              <option value="+234">+234</option>
-            </select>
-          </div>
-          <input type="tel" class="input" name="mother-phone-number" maxlength="10" id="phone-number"
-            placeholder="Enter your phone number" value="<?= htmlspecialchars($MothersNumber) ?>" title="Please enter valid phone number">
+          <input type="tel" class="input" name="MothersNumber" maxlength="10" id="phone-number"
+            placeholder="Enter mother's phone number" value="<?= htmlspecialchars($MothersNumber) ?>" title="Please enter valid phone number" required>
         </div> 
 
         <div class="inputfield">
           <label>Email Address</label>
-          <input type="email" class="input" name="email" placeholder="Enter your email (optional)"
+          <input type="email" class="input" name="Email" placeholder="Enter your email (optional)"
           value="<?= htmlspecialchars($Email) ?>" required>
         </div>
 
         <div class="inputfield">
-          <label>Nationality</label>
-          <input type="text" onkeyup='check()' class="input" id="confirm-password" name="nationality"
-            placeholder="Nationality" autocomplete="off" "
-            maxlength="100" minlength="8" required>
-        </div>
-
-        <div class="inputfield" id="religion">
-            <label for="">Religion</label>
-            <input type="radio" name="religion" id="radio" value="Male" <?= $Religion == 'Male' ? 'checked' : '' ?>> Male
-            <input type="radio" name="religion" id="radio" value="Female" <?= $Religion == 'Female' ? 'checked' : '' ?>> Female
+          <label>Religion</label>
+          <input type="text" class="input" name="Religion" placeholder="Enter your religion"
+            value="<?= htmlspecialchars($Religion) ?>" required>
         </div>
 
         <div class="inputfield">
-          <label>Address 1</label>
-          <textarea class="textarea" name="address" id="" cols="30" rows="5" placeholder="Enter your address"
+          <label>Address</label>
+          <textarea class="textarea" name="Address" id="" cols="30" rows="5" placeholder="Enter your address"
             maxlength="100" required><?= htmlspecialchars($Address) ?></textarea>
-        </div>
-        
-        <div class="inputfield">
-          <label>Address 2</label>
-          <textarea class="textarea" name="address2" id="" cols="30" rows="5" placeholder="Enter your address"
-            maxlength="100" required></textarea>
         </div>
 
         <div class="inputfield">
           <label>State</label>
           <div class="custom_select">
-            <select id="state" name="state" required>
+            <select id="state" name="State" required>
               <option value="">--Select your state--</option>
               <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
               <!-- Add other states as needed -->
@@ -110,7 +87,7 @@ unset($_SESSION['signup-data']);
         </div>
 
         <div class="inputfield btns" id="btn">
-          <button type="submit" value="Register" class="btn">Next</button>
+          <button type="submit" name="submit" value="Register" class="btn">Next</button>
         </div>
 
       </div>

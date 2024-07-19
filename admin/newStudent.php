@@ -88,6 +88,7 @@ $stmt->close();
         </div>
 
         <h2>New Student</h2>
+        <h2 style="background-color: greenyellow; color:white; border: 1px solid black; padding:10px 15px; width: 90px; border-radius: 20px;"><a href='./parentformNext.php'>Next</a></h2>
         <table>
             <thead>
                 <tr>
@@ -98,13 +99,12 @@ $stmt->close();
                     <!-- <th>Date of Birth</th> -->
                     <th>Address</th>
                     <th>Picture</th>
-                    <th>Next page</th>
 
 
                 </tr>
             </thead>
             <tbody>
-            <?php 
+            <?php
 $query = "SELECT id, Firstname, Lastname, Gender, Age, DOB, Address, Picture FROM studentapplication";
 $stmt = $connection->prepare($query);
 $stmt->execute();
@@ -126,14 +126,13 @@ if ($result && $result->num_rows > 0) {
                 <td>{$Gender}</td>
                 <td>{$Age}</td>
                 <td>{$Address}</td>
-                <td><a href='{$Picture}' target='_blank'>View Picture</a></td>
-                <td><a href='./parentformNext.php'>Next</a></td>
-
+                <td><img src='{$Picture}' alt='Picture' style='max-width: 100px; max-height: 100px;'></td>
               </tr>";
     }
 }
 $stmt->close();
 ?>
+
             </tbody>
         </table>
         <!--===== MAIN JS =====-->

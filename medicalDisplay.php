@@ -9,7 +9,13 @@ if ($connection->connect_error) {
 $id = $_GET['id'] ?? null;
 
 // Prepare the SQL statement to prevent SQL injection
-$stmt = $connection->prepare("SELECT id, Father, FatherNumber, Mother, MothersNumber, Email, Religion, Address FROM parentinfo");
+if ($id) {
+    $stmt = $connection->prepare("SELECT id, BOG, `Condition`, Immun, EmgContact, MedPic, Consent FROM medicalreport WHERE id = ?");
+    $stmt->bind_param("i", $id);
+} else {
+    $stmt = $connection->prepare("SELECT id, BOG, `Condition`, Immun, EmgContact, MedPic, Consent FROM medicalreport");
+}
+
 if (!$stmt) {
     die("Prepare failed: " . $connection->error);
 }
@@ -28,7 +34,7 @@ $result = $stmt->get_result();
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- ===== CSS ===== -->
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./admin/css/main.css">
 
     <title>New Student</title>
 </head>
@@ -87,19 +93,20 @@ $result = $stmt->get_result();
         </nav>
     </div>
 
-    <h2>New Student</h2>
-    <h2 style="background-color: greenyellow; color:white; border: 1px solid black; padding:10px 15px; width: 90px; border-radius: 20px;"><a href='../medicalDisplay.php'>Next</a></h2>
+    <h2>Medical Report</h2>
+    <h2 style="background-color: greenyellow; color:white; border: 1px solid black; padding:5px 10px; width: 90px; border-radius: 20px; font-size:20px;"><a href='../letterOfUndertakingDisplay.php'>Next</a></h2>
 
     <table>
         <thead>
             <tr>
-                <th>Father's Name</th>
-                <th>Father's Number</th>
-                <th>Mother's Name</th>
-                <th>Mother's Number</th>
-                <th>Email</th>
-                <th>Religion</th>
-                <th>Address</th>
+                <th>ID</th>
+                <th>Blood Group</th>
+                <th>Peculiar Medical Condition</th>
+                <th>Immunization</th>
+                <th>Emergency Contact</th>
+                <th>Medical Report</th>
+                <th>Consent</th>
+
             </tr>
         </thead>
         <tbody>
@@ -107,27 +114,26 @@ $result = $stmt->get_result();
         if ($result && $result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $id = htmlspecialchars($row['id']);
-                $Father = htmlspecialchars($row['Father']);
-                $FatherNumber = htmlspecialchars($row['FatherNumber']);
-                $Mother = htmlspecialchars($row['Mother']);
-                $MothersNumber = htmlspecialchars($row['MothersNumber']);
-                $Email = htmlspecialchars($row['Email']);
-                $Religion = ($row['Religion'] == 0) ? 'Christian' : 'Muslim';
-                $Address = htmlspecialchars($row['Address']);
+                $BOG = htmlspecialchars($row['BOG']);
+                $Condition = htmlspecialchars($row['Condition']);
+                $Immun = ($row['Immun'] == 0) ? 'Yes' : 'No';
+                $EmgContact = htmlspecialchars($row['EmgContact']);
+                $MedPic = htmlspecialchars($row['MedPic']);
+                $Consent = ($row['Consent'] == 0) ? 'Yes' : 'No';
+
 
                 echo "<tr>
-                        <td>{$Father}</td>
-                        <td>{$FatherNumber}</td>
-                        <td>{$Mother}</td>
-                        <td>{$MothersNumber}</td>
-                        <td>{$Email}</td>
-                        <td>{$Religion}</td>
-                        <td>{$Address}</td>
-                        
+                        <td>{$id}</td>
+                        <td>{$BOG}</td>
+                        <td>{$Condition}</td>
+                        <td>{$Immun}</td>
+                        <td>{$EmgContact}</td>
+                        <td><img src='./GenIMG{$MedPic}' alt='Picture' style='max-width: 100px; max-height: 100px;'></td>
+                        <td>{$Consent}</td>
                       </tr>";
             }
         } else {
-            echo "<tr><td colspan='10'>No data found</td></tr>";
+            echo "<tr><td colspan='7'>No data found</td></tr>";
         }
         $stmt->close();
         ?>

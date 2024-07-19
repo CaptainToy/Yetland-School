@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
             $errors[] = 'Picture size exceeds the limit of 100MB';
         } else {
             $PictureNewName = uniqid('', true) . "." . $PictureExt;
-            $PictureDestination = 'uploads/' . $PictureNewName;
+            $PictureDestination = './GenIMG' . $PictureNewName;
             move_uploaded_file($PictureTmpName, $PictureDestination);
         }
     } else {

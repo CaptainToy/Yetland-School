@@ -29,7 +29,7 @@
               <input type="checkbox" name="check" value="Declared" required>
               <span class="checkmark"></span>
             </label>
-            <p>I ${parent/guariden} of ${student's name}hereby stat that i will adhere to the schools hand book and rules:</p>
+            <p>I ${parent/guariden} of ${student's name}hereby stat that i will adhere to the schools rules and regulations:</p>
           </div>
   
           <div class="inputfield" required>
