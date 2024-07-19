@@ -117,7 +117,6 @@ if ($result && $result->num_rows > 0) {
         $Lastname = htmlspecialchars($row['Lastname']);
         $Gender = ($row['Gender'] == 0) ? 'Male' : 'Female';
         $Age = htmlspecialchars($row['Age']);
-        // $DOB = htmlspecialchars($row['DOB']);
         $Address = htmlspecialchars($row['Address']);
         $Picture = htmlspecialchars($row['Picture']);
 
@@ -128,7 +127,7 @@ if ($result && $result->num_rows > 0) {
                 <td>{$Age}</td>
                 <td>{$Address}</td>
                 <td><a href='{$Picture}' target='_blank'>View Picture</a></td>
-                <td><a href='./'>Next</a></td>
+                <td><a href='./parentformNext.php'>Next</a></td>
 
               </tr>";
     }
