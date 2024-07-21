@@ -24,46 +24,42 @@
         </header>
 
         <div class="l-navbar" id="nav-bar">
-            <nav class="nav">
-                <div>
-                    <a href="#" class="nav__logo">
-                        <i class='bx bx-layer nav__logo-icon'></i>
-                        <span class="nav__logo-name">Yetland's Admin</span>
+        <nav class="nav">
+            <div>
+                <a href="#" class="nav__logo">
+                    <i class='bx bx-layer nav__logo-icon'></i>
+                    <span class="nav__logo-name">Yetland's Admin</span>
+                </a>
+                <div class="nav__list">
+                    <a href="./Teacher.php" class="nav__link ">
+                        <i class='bx bx-user nav__icon'></i>
+                        <span class="nav__name">Teachers</span>
                     </a>
 
-                    <div class="nav__list">
-                        <a href="./Teacher.php" class="nav__link">
-                            <i class='bx bx-user nav__icon' ></i>
-                            <span class="nav__name">Teachers</span>
-                        </a>
-                        
-                        <a href="./student.php" class="nav__link">
-                            <i class='bx bx-message-square-detail nav__icon' ></i>
-                            <span class="nav__name">Student</span>
+                    <a href="./subject.php" class="nav__link">
+                            <i class='bx bx-book nav__icon' ></i>
+                            <span class="nav__name">Subject</span>
                         </a>
 
-                        <a href="./result.php" class="nav__link">
-                            <i class='bx bx-bookmark nav__icon' ></i>
-                            <span class="nav__name">Result</span>
-                        </a>
-
-                        <a href="./Add-post.php" class="nav__link">
-                            <i class='bx bx-folder nav__icon' ></i>
-                            <span class="nav__name">Post</span>
-                        </a>
-
-                        <a href="./School-fee.php" class="nav__link active">
-                            <i class='bx bx-bar-chart-alt-2 nav__icon' ></i>
-                            <span class="nav__name">School Fee</span>
-                        </a>
-                    </div>
+                    <a href="./Student.php" class="nav__link">
+                        <i class='bx bx-message-square-detail nav__icon'></i>
+                        <span class="nav__name">Student</span>
+                    </a>               
+                    <a href="./School-fee.php" class="nav__link active">
+                        <i class='bx bx-bar-chart-alt-2 nav__icon'></i>
+                        <span class="nav__name">School Fee</span>
+                    </a>
+                    <a href="./newStudent.php" class="nav__link">
+                        <i class='bx bx-save nav__icon' ></i>
+                        <span class="nav__name">New Student</span>
+                    </a>
                 </div>
-
-                <a href="../login.php" class="nav__link">
-                    <i class='bx bx-log-out nav__icon' ></i>
-                    <span class="nav__name">Log Out</span>
-                </a>
-            </nav>
+            </div>
+            <a href="../login.php" class="nav__link">
+                <i class='bx bx-log-out nav__icon'></i>
+                <span class="nav__name">Log Out</span>
+            </a>
+        </nav>
         </div>
 
         <h2>All Student Fee</h2>

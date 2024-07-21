@@ -25,21 +25,26 @@
             left: 0;
             background-color: rgba(255, 255, 255, 0.8);
             z-index: 9999;
+            flex-direction: column;
         }
         .preloader.hidden {
             display: none;
         }
-        .spinner {
-            border: 16px solid #f3f3f3;
-            border-radius: 50%;
-            border-top: 16px solid #3498db;
-            width: 120px;
-            height: 120px;
-            animation: spin 2s linear infinite;
+        .progress-bar {
+            width: 80%;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .progress {
+            width: 0;
+            height: 30px;
+            background-color: #3498db;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            transition: width 0.1s;
         }
         .success-message {
             background-color: #d4edda;
@@ -66,7 +71,9 @@
 </head>
 <body>
     <div class="preloader">
-        <div class="spinner"></div>
+        <div class="progress-bar">
+            <div class="progress" id="progress">0%</div>
+        </div>
     </div>
 
     <div class="success-message" style="display: none;">
@@ -81,10 +88,19 @@
         }
 
         window.onload = function() {
-            setTimeout(function() {
-                document.querySelector('.preloader').classList.add('hidden');
-                document.querySelector('.success-message').style.display = 'block';
-            }, 5000); // 10 seconds
+            let progress = document.getElementById('progress');
+            let width = 0;
+            let interval = setInterval(function() {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    document.querySelector('.preloader').classList.add('hidden');
+                    document.querySelector('.success-message').style.display = 'block';
+                } else {
+                    width++;
+                    progress.style.width = width + '%';
+                    progress.textContent = width + '%';
+                }
+            }, 50); // Adjust the speed of the progress bar here
         };
     </script>
 </body>
