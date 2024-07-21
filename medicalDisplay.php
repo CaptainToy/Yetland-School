@@ -54,39 +54,39 @@ $result = $stmt->get_result();
                 </a>
 
                 <div class="nav__list">
-                    <a href="./Teacher.php" class="nav__link">
+                    <a href="./admin/teacher.php" class="nav__link">
                         <i class='bx bx-user nav__icon'></i>
                         <span class="nav__name">Teachers</span>
                     </a>
                     
-                    <a href="./allStudent.php" class="nav__link">
+                    <a href="./admin/allStudent.php" class="nav__link">
                         <i class='bx bx-message-square-detail nav__icon'></i>
                         <span class="nav__name">Student</span>
                     </a>
 
-                    <a href="./All-Result.php" class="nav__link">
+                    <a href="./admin/All-Result.php" class="nav__link">
                         <i class='bx bx-bookmark nav__icon'></i>
                         <span class="nav__name">Result</span>
                     </a>
 
-                    <a href="./Add-post.php" class="nav__link">
+                    <a href="./admin/Add-post.php" class="nav__link">
                         <i class='bx bx-folder nav__icon'></i>
                         <span class="nav__name">Post</span>
                     </a>
 
-                    <a href="./School-fee.php" class="nav__link">
+                    <a href="./admin/School-fee.php" class="nav__link">
                         <i class='bx bx-bar-chart-alt-2 nav__icon'></i>
                         <span class="nav__name">School Fee</span>
                     </a>
 
-                    <a href="./newStudent.php" class="nav__link">
+                    <a href="./admin/newStudent.php" class="nav__link">
                         <i class='bx bx-save nav__icon'></i>
                         <span class="nav__name">New Student</span>
                     </a>
                 </div>
             </div>
 
-            <a href="../login.php" class="nav__link">
+            <a href="./admin/login.php" class="nav__link">
                 <i class='bx bx-log-out nav__icon'></i>
                 <span class="nav__name">Log Out</span>
             </a>
@@ -94,7 +94,7 @@ $result = $stmt->get_result();
     </div>
 
     <h2>Medical Report</h2>
-    <h2 style="background-color: greenyellow; color:white; border: 1px solid black; padding:5px 10px; width: 90px; border-radius: 20px; font-size:20px;"><a href='../letterOfUndertakingDisplay.php'>Next</a></h2>
+    <h2 style="background-color: greenyellow; color:white; border: 1px solid black; padding:5px 10px; width: 90px; border-radius: 20px; font-size:20px;"><a href='Oprational.php'>Next</a></h2>
 
     <table>
         <thead>
