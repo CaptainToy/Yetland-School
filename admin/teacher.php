@@ -87,7 +87,6 @@ if (isset($_SESSION['user-id'])) {
     <table>
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Staff ID</th>
                 <th>Full Name</th>
                 <th>Email</th>
@@ -98,7 +97,7 @@ if (isset($_SESSION['user-id'])) {
         </thead>
         <tbody>
         <?php 
-$query = "SELECT id, Staffid, fullname, email, Role, Post FROM teachers";
+$query = "SELECT id, Staffid, fullName, email, Role, Post FROM teachers";
 $stmt = $connection->prepare($query);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -107,20 +106,28 @@ if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $id = htmlspecialchars($row['id']);
         $Staffid = htmlspecialchars($row['Staffid']);
-        $fullname = htmlspecialchars($row['fullname']);
+        $fullName = htmlspecialchars($row['fullName']);
         $email = htmlspecialchars($row['email']);
         $role = ($row['Role'] == 0) ? 'Admin' : (($row['Role'] == 1) ? 'HM' : (($row['Role'] == 2) ? 'Author' : 'Teacher'));
         $post = htmlspecialchars($row['Post']);
         echo "<tr>
-                <td>{$id}</td>
                 <td>{$Staffid}</td>
-                <td>{$fullname}</td>
+                <td>{$fullName}</td>
                 <td>{$email}</td>
                 <td>{$role}</td>
                 <td><a href='./editTeachers.php?id={$id}' class='btn sm'><i class='bx bx-file nav__icon'></i></a></td>
                 <td><a href='./deleteTeachers.php?id={$id}' class='btn danger' onclick='return confirm(\"Are you sure you want to delete this user?\");'><i class='bx bx-trash nav__icon'></i></a></td>
               </tr>";
     }
+} else {
+    echo "<tr><td colspan='7'><div style=\"display: flex; justify-content: center; align-items: center; height: 50vh; margin: 0; background-color: #f0f0f0;\">
+    <div style=\"text-align: center; padding: 20px; border: 1px solid #ccc; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\">
+        <h1 style=\"font-size: 24px; color: #333;\">No Data Found</h1>
+        <p style=\"font-size: 16px; color: #666;\">We couldn't find any data to display. Please check back later.</p>
+    </div>
+</div>
+</td>
+</tr>";
 }
 $stmt->close();
 ?>

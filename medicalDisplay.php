@@ -94,7 +94,7 @@ $result = $stmt->get_result();
     </div>
 
     <h2>Medical Report</h2>
-    <h2 style="background-color: greenyellow; color:white; border: 1px solid black; padding:5px 10px; width: 90px; border-radius: 20px; font-size:20px;"><a href='Oprational.php'>Next</a></h2>
+    
 
     <table>
         <thead>
@@ -132,8 +132,15 @@ $result = $stmt->get_result();
                         <td>{$Consent}</td>
                       </tr>";
             }
-        } else {
-            echo "<tr><td colspan='7'>No data found</td></tr>";
+        }else {
+            echo "<tr><td colspan='7'><div style=\"display: flex; justify-content: center; align-items: center; height: 50vh; margin: 0; background-color: #f0f0f0;\">
+            <div style=\"text-align: center; padding: 20px; border: 1px solid #ccc; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\">
+                <h1 style=\"font-size: 24px; color: #333;\">No Data Found</h1>
+                <p style=\"font-size: 16px; color: #666;\">We couldn't find any data to display. Please check back later.</p>
+            </div>
+        </div>
+        </td>
+        </tr>";
         }
         $stmt->close();
         ?>

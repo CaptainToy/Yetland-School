@@ -56,7 +56,7 @@ if (isset($_POST['submit'])) {
             if ($insertStmt->execute()) {
                 // Registration successful
                 $_SESSION['signup-success'] = 'Registration successful';
-                header('Location: ' . ROOT_URL . 'allStudent.php');
+                header('Location: ' . ROOT_URL . 'admin/allStudent.php');
                 exit();
             } else {
                 // Log the error

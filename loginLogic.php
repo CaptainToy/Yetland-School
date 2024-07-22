@@ -41,17 +41,11 @@ if (isset($_POST['submit'])) {
                 case 1:
                     $_SESSION['user-admin'] = true;
                     header('Location: ' . ROOT_URL . 'HM/Teacher.php'); // Redirect HM to manage user page
-                    break;
-                case 2:
-                    $_SESSION['user-admin'] = true;
-                    header('Location:' .ROOT_URL .'author/student.php');
-                case 4:
-                    $_SESSION['user-admin'] = true;
-                    header('Location: ' . ROOT_URL . 'teachers/Class.php'); // Redirect teachers to class page
-                    break;
+                    break; 
                 default:
-                    header('Location: ' . ROOT_URL . 'index.php'); // Redirect non-admin to login page
-                    break;
+                $_SESSION['user-admin'] = true;
+                header('Location: ' . ROOT_URL . 'teachers/Class.php'); // Redirect teachers to class page
+                break;                
             }
             exit();
         } else {
@@ -69,6 +63,6 @@ if (isset($_POST['submit'])) {
     exit();
 } else {
     // Redirect to login page if form is not submitted
-    header('Location: ' . ROOT_URL . 'login.php');
+    header('Location: ' . ROOT_URL . 'AddTeachers.php');
     exit();
 }

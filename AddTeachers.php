@@ -54,10 +54,9 @@ unset($_SESSION['signup-data']);
                 <div class="form-group">
                     <label for="role">Role:</label>
                     <select id="role" name="role" required>
-                        <option value="1" <?= $Role == 'HM' ? 'selected' : '' ?>>HM</option>
-                        <option value="0" <?= $Role == 'Admin' ? 'selected' : '' ?>>Admin</option>
-                        <option value="2" <?= $Role == 'Author' ? 'selected' : '' ?>>Author</option>
-                        <option value="3" <?= $Role == 'Teachers' ? 'selected' : '' ?>>Teachers</option>
+                        <option value="0" <?= $Role == 'HM' ? 'selected' : '' ?>>HM</option>
+                        <option value="1" <?= $Role == 'Author' ? 'selected' : '' ?>>Author</option>
+                        <option value="2" <?= $Role == 'Teachers' ? 'selected' : '' ?>>Teachers</option>
                     </select>
                 </div>
             </div>
