@@ -19,7 +19,7 @@ unset($_SESSION['signup-data']);
 </head>
 <body>
     <div class="container">
-        <div class="img-container"><img src="./assets/img/Yetland img/DSC_0136.JPG" alt="logo"></div>
+        <div class="img-container"><img src="./assets/img/yetland/logo-removebg-preview.png" alt="logo"></div>
         <div class="content-container">
             <div class="error_message success">
                 <p id="error"></p>

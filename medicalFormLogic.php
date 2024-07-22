@@ -92,7 +92,7 @@ if (isset($_POST['submit'])) {
     // Redirect back to signup page
     // header('Location: ' . ROOT_URL . 'medicalForm.php');
     echo (' <div style="border: 1px solid #f44336; background-color: #ffebee; color: #f44336; padding: 15px; border-radius: 5px; max-width: 400px; margin: 20px auto; font-family: Arial, sans-serif; text-align: center;">
-        <strong>Error:</strong> There was an issue processing your request. Please try again later.
+        <strong>Error:</strong> There was an issue processing your request. Please Check the input again.
     </div>');
     exit();
 } else {

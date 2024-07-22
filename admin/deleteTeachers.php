@@ -1,25 +1,46 @@
 <?php
-require 'Config/database.php';
+require 'config/database.php';
 
 if (isset($_GET['id'])) {
     $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
 
+    // Check if the ID is valid
+    if ($id) {
+        // Fetch teacher from database
+        $query = 'SELECT * FROM teachers WHERE id = ?';
+        $stmt = mysqli_prepare($connection, $query);
+        mysqli_stmt_bind_param($stmt, 'i', $id);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
 
-    // fetch teacher from database
-    $query = 'SELECT * FROM teachers WHERE id=$id';
-    $result = mysqli_query($connection, $query);
-    $teacher = mysqli_fetch_assoc($result);
+        if ($result && mysqli_num_rows($result) == 1) {
+            $teacher = mysqli_fetch_assoc($result);
 
-//   delete user from data base
-if (mysqli_num_rows($result)==1){
-    var_dump($teacher);
+            // Delete user from database
+            $delete_user_query = 'DELETE FROM teachers WHERE id = ?';
+            $delete_stmt = mysqli_prepare($connection, $delete_user_query);
+            mysqli_stmt_bind_param($delete_stmt, 'i', $id);
+            mysqli_stmt_execute($delete_stmt);
+
+            if (mysqli_stmt_affected_rows($delete_stmt) > 0) {
+                $_SESSION["delete-user-success"] = "User {$teacher['StaffId']} deleted successfully.";
+            } else {
+                $_SESSION["delete-user"] = "Couldn't delete {$teacher['StaffId']} from the database.";
+            }
+
+            mysqli_stmt_close($delete_stmt);
+        } else {
+            $_SESSION["delete-user"] = "Teacher not found.";
+        }
+
+        mysqli_stmt_close($stmt);
+    } else {
+        $_SESSION["delete-user"] = "Invalid ID.";
+    }
+} else {
+    $_SESSION["delete-user"] = "ID not set.";
 }
-$delete_user_query = "DELETE FROM teachers WHERE id=$id";
-$delete_user_result = mysqli_query($connection,$delete_user_query);
-if(mysqli_errno($connection)){
-    $_SESSION["delete-user"] = "Counldn't delete {$teacher['Staffid']} from the Database";
-}else{
-    $_SESSION["delete-user-success"] = "user {$teacher['Staffid']} deleted successful";
-}
-}
-header("location: ". ROOT_URL . 'admin/teacher.php');
+
+header("Location: " . ROOT_URL . 'admin/teacher.php');
+exit();
+?>
