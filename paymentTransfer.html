@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+    </style>
+    <script>
+        setTimeout(function() {
+            window.location.href = "your-redirect-url-here"; // Replace with your desired URL
+        }, 3000); // Redirect after 5 seconds
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p>Page Not Found</p>
+        <p>You will be redirected shortly...</p>
+    </div>
+</body>
+</html>

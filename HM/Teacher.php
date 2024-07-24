@@ -28,7 +28,7 @@ if (isset($_SESSION['user-id'])) {
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- ===== CSS ===== -->
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../admin/css/main.css">
 
     <title>Staff Document</title>
 </head>
@@ -105,7 +105,7 @@ if ($result && $result->num_rows > 0) {
         $Staffid = htmlspecialchars($row['Staffid']);
         $fullname = htmlspecialchars($row['fullname']);
         $email = htmlspecialchars($row['email']);
-        $role = ($row['Role'] == 0) ? 'Admin' : (($row['Role'] == 1) ? 'HM' : (($row['Role'] == 2) ? 'Author' : 'Teacher'));
+        $role = ($row['Role'] == 1) ? 'HM' : (($row['Role'] == 2) ? 'Author' : 'Teacher');
         $post = htmlspecialchars($row['Post']);
         echo "<tr>
                 <td>{$id}</td>
@@ -113,7 +113,7 @@ if ($result && $result->num_rows > 0) {
                 <td>{$fullname}</td>
                 <td>{$email}</td>
                 <td>{$role}</td>
-                <td><a href='../admin/editTeachers.php?id={$id}' class='btn sm'><i class='bx bx-file nav__icon'></i></a></td>
+                <td><a href='./editTeachers.php?id={$id}' class='btn sm'><i class='bx bx-file nav__icon'></i></a></td>
               </tr>";
     }
 }
