@@ -39,8 +39,8 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" class="active">Home<br></a></li>
-          <li><a href="./AdmissionForm.html">Admissions</a></li>
+          <li><a href="./index.php" class="active">Home<br></a></li>
+          <li><a href="./paymentMethod1.html">Admissions</a></li>
           <li><a href="trainers.html">Curriculum</a></li>
           <li><a href="events.html">News & Events</a></li>
           <li><a href="contact.html">Photo Boot</a></li>

@@ -88,7 +88,6 @@ if (isset($_SESSION['user-id'])) {
     <table>
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Subject Code</th>
                 <th>Subject</th>
                 <th>Edit</th>
@@ -109,10 +108,9 @@ if (isset($_SESSION['user-id'])) {
                     $subject = htmlspecialchars($row['Subject']);
                    
                     echo "<tr>
-                            <td>{$id}</td>
                             <td>{$code}</td>
                             <td>{$subject}</td>
-                            <td><a href='./editSubject?id={$id}' class='btn sm'><i class='bx bx-file nav__icon'></i></a></td>
+                            <td><a href='./editSubject.php?id={$id}' class='btn sm'><i class='bx bx-file nav__icon'></i></a></td>
                             <td><a href='./DeleteSubject.php?id={$id}' class='btn danger'><i class='bx bx-trash nav__icon'></i></a></td>
                           </tr>";
                 }

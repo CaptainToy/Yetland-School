@@ -1,4 +1,21 @@
+<?php 
+require './partials/header.php';
 
+// Check connection
+if ($connection->connect_error) {
+    die("Connection failed: " . $connection->connect_error);
+}
+
+// Prepare the SQL statement to prevent SQL injection
+$stmt = $connection->prepare("SELECT id, Firstname, Middlename, Lastname, Address, Gender, Studentid, Class FROM allstudent WHERE Class = 'basic 1'");
+
+if (!$stmt) {
+    die("Prepare failed: " . $connection->error);
+}
+
+$stmt->execute();
+$result = $stmt->get_result();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -25,63 +42,104 @@
         </header>
 
         <div class="l-navbar" id="nav-bar">
-        <nav class="nav">
-            <div>
-                <a href="#" class="nav__logo">
-                    <i class='bx bx-layer nav__logo-icon'></i>
-                    <span class="nav__logo-name">Yetland's Admin</span>
-                </a>
-                <div class="nav__list">
-                    <a href="./Teacher.php" class="nav__link ">
-                        <i class='bx bx-user nav__icon'></i>
-                        <span class="nav__name">Teachers</span>
+            <nav class="nav">
+                <div>
+                    <a href="#" class="nav__logo">
+                        <i class='bx bx-layer nav__logo-icon'></i>
+                        <span class="nav__logo-name">Yetland's Admin</span>
                     </a>
-
-                    <a href="./subject.php" class="nav__link">
-                            <i class='bx bx-book nav__icon' ></i>
-                            <span class="nav__name">Subject</span>
+                    <div class="nav__list">
+                        <a href="./Teacher.php" class="nav__link ">
+                            <i class='bx bx-user nav__icon'></i>
+                            <span class="nav__name">Teachers</span>
                         </a>
-
-                    <a href="./Student.php" class="nav__link active">
-                        <i class='bx bx-message-square-detail nav__icon'></i>
-                        <span class="nav__name">Student</span>
-                    </a>               
-                    <a href="./School-fee.php" class="nav__link">
-                        <i class='bx bx-bar-chart-alt-2 nav__icon'></i>
-                        <span class="nav__name">School Fee</span>
-                    </a>
-                    <a href="./newStudent.php" class="nav__link">
-                        <i class='bx bx-save nav__icon' ></i>
-                        <span class="nav__name">New Student</span>
-                    </a>
+                        <a href="./allStudent.php" class="nav__link active">
+                            <i class='bx bx-message-square-detail nav__icon'></i>
+                            <span class="nav__name">Student</span>
+                        </a>
+                        <a href="./All-Result.php" class="nav__link">
+                            <i class='bx bx-bookmark nav__icon'></i>
+                            <span class="nav__name">Result</span>
+                        </a>
+                        <a href="./Add-post.php" class="nav__link">
+                            <i class='bx bx-folder nav__icon'></i>
+                            <span class="nav__name">Post</span>
+                        </a>
+                        <a href="./School-fee.php" class="nav__link">
+                            <i class='bx bx-bar-chart-alt-2 nav__icon'></i>
+                            <span class="nav__name">School Fee</span>
+                        </a>
+                        <a href="./newStudent.php" class="nav__link">
+                            <i class='bx bx-save nav__icon' ></i>
+                            <span class="nav__name">New Student</span>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <a href="../login.php" class="nav__link">
-                <i class='bx bx-log-out nav__icon'></i>
-                <span class="nav__name">Log Out</span>
-            </a>
-        </nav>
+                <a href="../login.php" class="nav__link">
+                    <i class='bx bx-log-out nav__icon'></i>
+                    <span class="nav__name">Log Out</span>
+                </a>
+            </nav>
         </div>
 
         <h2>All Students</h2>
-        <div style="border: 1px solid black; border-radius: 10px; width: 100px; padding: 10px 20px; ">
-               <a href="./addStudent.php">+Add</a>
-        </div>
-  
+        <h5>
+            <a href="./addStudent.php" style="background-color: #4CAF50; /* Green */
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 12px;">
+                Add Student
+            </a>
+        </h5>
+
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Full Name</th>
                     <th>Gender</th>
                     <th>Student ID</th>
                     <th>Class</th>
                     <th>Result</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
+            <?php 
+            if ($result && $result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $id = htmlspecialchars($row['id']);
+                    $fullName = htmlspecialchars($row['Firstname'] . ' ' . $row['Middlename'] . ' ' . $row['Lastname']);
+                    $gender = htmlspecialchars($row['Gender']);
+                    $genderText = $gender === '0' ? 'Male' : 'Female';
+                    $studentid = htmlspecialchars($row['Studentid']);
+                    $class = htmlspecialchars($row['Class']);
 
-
+                    echo "<tr>
+                            <td>{$fullName}</td>
+                            <td>{$genderText}</td>
+                            <td>{$studentid}</td>
+                            <td>{$class}</td>
+                            <td><a href='./student-Result.php?id={$id}' class='btn sm'><i class='bx bx-printer nav__icon'></i></a></td>
+                            <td><a href='./deleteStudent.php?id={$id}' class='btn danger' onclick='return confirm(\"Are you sure you want to delete this user?\");'><i class='bx bx-trash nav__icon'></i></a></td>
+                        </tr>";
+                }
+            } else {
+                echo "<tr><td colspan='6'><div style=\"display: flex; justify-content: center; align-items: center; height: 50vh; margin: 0; background-color: #f0f0f0;\">
+                    <div style=\"text-align: center; padding: 20px; border: 1px solid #ccc; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\">
+                        <h1 style=\"font-size: 24px; color: #333;\">No Data Found</h1>
+                        <p style=\"font-size: 16px; color: #666;\">We couldn't find any data to display. Please check back later.</p>
+                    </div>
+                </div></td></tr>";
+            }
+            $stmt->close();
+            ?>
             </tbody>
         </table>
         <!--===== MAIN JS =====-->

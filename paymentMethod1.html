@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Warning</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .warning-box, .payment-box {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .warning-box h1, .payment-box h1 {
+            color: #ff0000;
+            margin-bottom: 1rem;
+        }
+
+        .warning-box p, .payment-box p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .warning-box button, .payment-box button {
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .warning-box button:hover, .payment-box button:hover {
+            background-color: #cc0000;
+        }
+
+        .payment-box .btn-transfer {
+            background-color: #28a745;
+        }
+
+        .payment-box .btn-transfer:hover {
+            background-color: #218838;
+        }
+
+        .payment-box {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="warning-box" id="warning-box">
+            <h1>Warning</h1>
+            <p>For you to access this form, you need to pay the sum of 1,500.</p>
+            <button onclick="payNow()">Click to Pay</button>
+        </div>
+        <div class="payment-box" id="payment-box">
+            <h1>Choose Payment Method</h1>
+            <p>Please select your preferred payment method:</p>
+            <button onclick="payWithCard()">Pay with Card</button>
+            <button class="btn-transfer" onclick="payWithTransfer()">Pay with Transfer</button>
+        </div>
+    </div>
+
+    <script>
+       function payNow() {
+    hideWarningBox();
+    showPaymentBox();
+}
+
+function hideWarningBox() {
+    document.getElementById('warning-box').style.display = 'none';
+}
+
+function showPaymentBox() {
+    document.getElementById('payment-box').style.display = 'block';
+}
+
+function payWithCard() {
+    var paymentInfo = window.location.href = "./payment.html";
+
+    if (paymentInfo) {
+        redirectToPaymentPage();
+    } else {
+        alert("Payment information is required.");
+    }
+}
+
+function redirectToPaymentPage() {
+    alert("Redirecting to transfer payment page...");
+
+    // Replace with actual card payment gateway redirection logic
+    window.location.href = "./payment.html";
+}
+
+function payWithTransfer() {
+    alert("Redirecting to transfer payment page...");
+    // Replace with actual transfer payment gateway redirection logic
+    window.location.href = "./paymentTransfer.html";
+}
+
+    </script>
+</body>
+</html>
