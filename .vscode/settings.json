@@ -1,4 +1,5 @@
 {
     "workbench.colorTheme": "Solarized Dark",
-    "workbench.preferredDarkColorTheme": "Solarized Dark"
+    "workbench.preferredDarkColorTheme": "Solarized Dark",
+    "liveServer.settings.port": 5501
 }

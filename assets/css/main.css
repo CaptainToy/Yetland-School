@@ -150,6 +150,7 @@ h6 {
   overflow: hidden;
 }
 
+
 .pulsating-play-btn:before {
   content: "";
   position: absolute;
